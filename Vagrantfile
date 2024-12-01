@@ -21,6 +21,11 @@ Vagrant.configure("2") do |config|
    systemctl disable apt-daily.service
    systemctl disable apt-daily.timer
 
+   config.vm.provider "virtualbox" do |vb|
+     #   # Display the VirtualBox GUI when booting the machine
+     vb.gui = true
+
+
    sudo apt-get update
    sudo apt-get install -y python3-venv zip
    touch /home/vagrant/.bash_aliases
